@@ -33,33 +33,6 @@ Um roadmap interativo para estudar Ciência da Computação baseado nos currícu
 - **Interface moderna** com glassmorphism e animações suaves
 - **Acessibilidade** otimizada
 
-## 🚀 Como Usar
-
-### 1. **Setup**
-```bash
-# Clone ou baixe os arquivos
-# Certifique-se de ter os 3 arquivos na mesma pasta:
-# - index.html
-# - styles.css  
-# - script.js
-```
-
-### 2. **Executar**
-- Abra o arquivo `index.html` em qualquer navegador moderno
-- Não precisa de servidor local - funciona diretamente no navegador
-
-### 3. **Navegação**
-- **Clique nos cursos** para abrir o modal detalhado
-- **Use os filtros** no topo para visualizar diferentes status
-- **Hover nos cursos** para ver conexões de pré-requisitos
-- **Busque cursos** usando a caixa de pesquisa
-
-### 4. **Gerenciar Progresso**
-- **Marque status** (Não iniciado/Em progresso/Concluído)
-- **Adicione notas** personalizadas para cada curso
-- **Favorite cursos** importantes com estrelas
-- **Acompanhe estatísticas** no header e sidebar
-
 ## 📚 Currículo Incluído
 
 ### **1º Ano - Fundamentos**
@@ -103,39 +76,6 @@ Todos os dados são salvos automaticamente no **localStorage** do navegador:
 
 ## 🎨 Customização
 
-### **Adicionar Novos Cursos**
-Edite a função `loadCourses()` em `script.js`:
-
-```javascript
-'novo-curso': {
-    title: 'Título do Curso',
-    code: 'Código/Instituição',
-    url: 'https://link-para-curso.com',
-    estimatedTime: '12 semanas',
-    prerequisites: ['curso-prerequisito']
-}
-```
-
-### **Modificar Temas**
-Edite as variáveis CSS em `styles.css`:
-
-```css
-:root {
-    --accent-primary: #667eea; /* Cor principal */
-    --accent-secondary: #764ba2; /* Cor secundária */
-    --success: #10b981; /* Cor de sucesso */
-    /* ... outras cores */
-}
-```
-
-## 📈 Funcionalidades Futuras
-
-- [ ] Export/Import de progresso
-- [ ] Compartilhamento de progresso
-- [ ] Integração com calendário
-- [ ] Notificações de estudo
-- [ ] Metas de tempo por curso
-- [ ] Estatísticas detalhadas
 
 ## 🤝 Contribuições
 
