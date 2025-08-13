@@ -111,7 +111,6 @@ Edite a função `loadCourses()` em `script.js`:
     title: 'Título do Curso',
     code: 'Código/Instituição',
     url: 'https://link-para-curso.com',
-    estimatedTime: '12 semanas',
     prerequisites: ['curso-prerequisito']
 }
 ```
