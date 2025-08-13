@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Knowledge Map - MIT/Harvard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">🗺️ CS Knowledge Map</div>
+            
+            <div class="header-stats">
+                <div class="progress-ring">
+                    <svg viewBox="0 0 60 60">
+                        <circle class="progress-ring-bg" cx="30" cy="30" r="25"></circle>
+                        <circle class="progress-ring-fill" cx="30" cy="30" r="25" id="progressRing"></circle>
+                    </svg>
+                    <div class="progress-text" id="progressPercent">0%</div>
+                </div>
+                
+                <div class="stats-display">
+                    <div class="stat-item">
+                        <div class="stat-number" id="completedStat">0</div>
+                        <div class="stat-label">Concluídos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="inProgressStat">0</div>
+                        <div class="stat-label">Em Progresso</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalStat">0</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-controls">
+                <input type="text" class="search-box" placeholder="Buscar curso..." id="searchBox">
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="completed">Concluídos</button>
+            <button class="filter-btn" data-filter="in-progress">Em Progresso</button>
+            <button class="filter-btn" data-filter="not-started">Não Iniciados</button>
+            <button class="filter-btn" data-filter="favorited">Favoritos</button>
+        </div>
+
+        <div class="knowledge-map">
+            <svg class="connection-lines" id="connectionLines"></svg>
+            
+            <div class="course-nodes">
+                <!-- Year 1 -->
+                <div class="year-layer" data-year="1">
+                    <div class="year-label">1º Ano - Fundamentos</div>
+                    <div class="course-node" data-course="cs50">
+                        <div class="course-title">CS50</div>
+                        <div class="course-code">Harvard</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="course-node" data-course="mit-python">
+                        <div class="course-title">Intro to CS & Python</div>
+                        <div class="course-code">MIT 6.0001</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="course-node" data-course="calculus1">
+                        <div class="course-title">Cálculo I</div>
+                        <div class="course-code">MIT 18.01</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="course-node" data-course="physics1">
+                        <div class="course-title">Física I</div>
+                        <div class="course-code">MIT 8.012</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2 -->
+                <div class="year-layer" data-year="2">
+                    <div class="year-label">2º Ano - CS Básico</div>
+                    <div class="course-node" data-course="linear-algebra">
+                        <div class="course-title">Álgebra Linear</div>
+                        <div class="course-code">MIT 18.06</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="course-node" data-course="discrete-math">
+                        <div class="course-title">Math for CS</div>
+                        <div class="course-code">MIT 6.1200J</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="course-node" data-course="intro-algorithms">
+                        <div class="course-title">Intro to Algorithms</div>
+                        <div class="course-code">MIT 6.006</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="course-node" data-course="computer-systems">
+                        <div class="course-title">Computer Systems</div>
+                        <div class="course-code">MIT 6.033</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 3 -->
+                <div class="year-layer" data-year="3">
+                    <div class="year-label">3º Ano - Avançado</div>
+                    <div class="course-node" data-course="operating-systems">
+                        <div class="course-title">Operating Systems</div>
+                        <div class="course-code">MIT 6.1810</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="course-node" data-course="artificial-intelligence">
+                        <div class="course-title">Artificial Intelligence</div>
+                        <div class="course-code">MIT 6.034</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="course-node" data-course="machine-learning">
+                        <div class="course-title">Machine Learning</div>
+                        <div class="course-code">MIT 6.036</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="course-node" data-course="computer-graphics">
+                        <div class="course-title">Computer Graphics</div>
+                        <div class="course-code">MIT 6.837</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 4 -->
+                <div class="year-layer" data-year="4">
+                    <div class="year-label">4º Ano - Especialização</div>
+                    <div class="course-node" data-course="capstone-project">
+                        <div class="course-title">Projeto Final</div>
+                        <div class="course-code">Capstone</div>
+                        <div class="course-status">
+                            <div class="status-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="progress-sidebar">
+        <div class="level-display" id="levelDisplay">Iniciante</div>
+        <div class="sidebar-title">Conquistas</div>
+        <div class="achievement locked" id="achievement1">
+            🏆 Primeiros Passos
+        </div>
+        <div class="achievement locked" id="achievement2">
+            🚀 Meio Caminho
+        </div>
+        <div class="achievement locked" id="achievement3">
+            👑 Mestre CS
+        </div>
+        <div class="achievement locked" id="achievement4">
+            ⭐ Colecionador
+        </div>
+    </div>
+
+    <!-- Course Modal -->
+    <div class="course-modal" id="courseModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title" id="modalTitle">Título do Curso</h2>
+                    <div id="modalCode" style="color: var(--text-secondary); margin-top: 0.5rem;"></div>
+                </div>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button class="favorite-btn" id="favoriteBtn" title="Adicionar aos favoritos"></button>
+                    <button class="modal-close" id="modalClose">✕</button>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <div class="section-title">Status do Curso</div>
+                <div class="status-buttons">
+                    <button class="status-btn" data-status="not-started">Não Iniciado</button>
+                    <button class="status-btn" data-status="in-progress">Em Progresso</button>
+                    <button class="status-btn" data-status="completed">Concluído</button>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <div class="section-title">Tempo Estimado</div>
+                <div id="estimatedTime" style="color: var(--text-secondary); margin-bottom: 1rem;">~12 semanas</div>
+            </div>
+
+            <div class="modal-section">
+                <div class="section-title">Minhas Anotações</div>
+                <textarea class="notes-textarea" id="courseNotes" placeholder="Adicione suas anotações sobre este curso..."></textarea>
+            </div>
+
+            <div class="modal-section">
+                <div class="section-title">Acesso ao Curso</div>
+                <a href="#" class="course-link" id="courseLink" target="_blank">
+                    Acessar Material →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
