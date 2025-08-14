@@ -869,6 +869,12 @@ body {
         gap: 1rem;
         font-size: 0.8rem; /* Reduz fonte */
     }
+
+    .status-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
     
     /* Ajusta controles do header */
     .header-controls {
@@ -973,6 +979,13 @@ body {
         min-height: 140px;
     }
     
+    .modal-header {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: end;
+        align-items: end;
+    }
+
     /* Stack todos os elementos do header verticalmente */
     .header-content {
         flex-direction: column;
@@ -990,6 +1003,12 @@ body {
 
     .logo {
         font-size: 1.2rem;
+    }
+
+    .status-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 
     .course-node {
